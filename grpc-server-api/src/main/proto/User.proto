@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.demo.grpc.server;
+
+message User {
+    string username = 1; //用户名
+    int32 sex = 2;      //性别
+    string email = 3;   //邮箱
+    bool enable = 4;   //是否可用
+}
+
+message GrpcResult {
+    int32 code = 2;
+    string message = 3;
+    User data = 4;
+}
+
+service UserService {
+    rpc sayHelloWord(User) returns (GrpcResult) ;
+}

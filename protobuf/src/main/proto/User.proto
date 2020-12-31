@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.demo.protobuf.builder;
+
+option java_outer_classname = "UserBuilder";
+
+message User {
+    string username = 1; //用户名
+    int32 sex = 2;      //性别
+    string email = 3;   //邮箱
+     bool enable = 4;   //是否可用
+}
